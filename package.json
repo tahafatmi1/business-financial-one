@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:pages": "vite build --base=/business-financial-one/ && node scripts/create-spa-fallback.mjs",
+    "build:pages": "vite build --base=/business-financial-one/",
     "preview": "vite preview",
     "check": "npm run build"
   },

@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import App from './App';
 import './styles/global.css';
 
-const baseName = import.meta.env.BASE_URL === '/'
-  ? undefined
-  : import.meta.env.BASE_URL.replace(/\/$/, '');
+const Router = import.meta.env.BASE_URL === '/' ? BrowserRouter : HashRouter;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={baseName}>
+    <Router>
       <App />
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>
 );

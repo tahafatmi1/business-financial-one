@@ -37,8 +37,6 @@ src/
   styles/               Global design system and responsive styles
   App.jsx               Route configuration
   main.jsx              Application entry point
-scripts/
-  create-spa-fallback.mjs  GitHub Pages route fallback
 .github/workflows/
   deploy-pages.yml      Automatic Pages deployment
 ```
