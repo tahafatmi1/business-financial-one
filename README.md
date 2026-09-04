@@ -2,6 +2,8 @@
 
 A production-oriented React/Vite website for Business Financial One (BFO), built as a responsive lead-generation experience for real estate and business financing.
 
+Live site: `https://tahafatmi1.github.io/business-financial-one/`
+
 ## Run locally
 
 ```bash
@@ -15,6 +17,7 @@ Open the local URL shown by Vite (normally `http://localhost:5173`).
 
 ```bash
 npm run build
+npm run build:pages
 npm run preview
 ```
 
@@ -34,6 +37,10 @@ src/
   styles/               Global design system and responsive styles
   App.jsx               Route configuration
   main.jsx              Application entry point
+scripts/
+  create-spa-fallback.mjs  GitHub Pages route fallback
+.github/workflows/
+  deploy-pages.yml      Automatic Pages deployment
 ```
 
 ## Logo and images
