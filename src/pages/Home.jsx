@@ -18,6 +18,16 @@ const trustItems = [
   [BriefcaseBusiness, 'Business Funding', 'Capital options designed to support business growth.']
 ];
 
+const loanComparisonRows = [
+  ['Min. loan', '75k', '75k', '75k', '75k'],
+  ['Rates from.', '7.73%', '7.73%', '8.99%', '5.75%'],
+  ['Points', '1.5 - 2.5', '1.5 - 2.5', '1.5 - 2.5', '1.0 - 2.0'],
+  ['LTC (up to)', '90%', '-', '85%', '-'],
+  ['LTV (up to)', '70%', '80%', '70%', '80%'],
+  ['Term', '6, 12, 18 mo', '6, 12, 18 mo', '6, 12, 18 mo', '30 years'],
+  ['Closing', '24 - 48 hours', '5 bus. days', '24 - 48 hours', '15 bus. days']
+];
+
 function Counter({ value, suffix = '' }) {
   const [shown, setShown] = useState(0);
   const ref = useRef(null);
@@ -54,8 +64,25 @@ export default function Home() {
 
       <section className="section" id="programs"><div className="container">
         <ScrollReveal><SectionHeading eyebrow="Financing Solutions" title="Financing Built Around Your Investment Strategy" text="Explore focused capital solutions for acquisitions, construction, rentals, commercial assets and business growth." align="center" /></ScrollReveal>
-        <div className="loan-grid">{allPrograms.map((program, index) => <ScrollReveal key={program.slug} delay={(index % 3) * 70}><LoanCard program={program} /></ScrollReveal>)}</div>
+        <div className="loan-grid">{allPrograms.map((program, index) => <ScrollReveal key={program.slug} delay={(index % 3) * 70}><LoanCard program={program} pathOverride={program.slug === 'fix-flip' ? '/loan-programs/fix-flip/borrower' : undefined} linkLabel={program.slug === 'fix-flip' ? 'Create Borrower' : 'Explore program'} /></ScrollReveal>)}</div>
       </div></section>
+
+      <section className="section loan-comparison" aria-labelledby="loan-comparison-title">
+        <div className="container loan-comparison__container">
+          <ScrollReveal><h2 id="loan-comparison-title">Compare Our Loan Products</h2></ScrollReveal>
+          <ScrollReveal>
+            <div className="loan-comparison__scroll" tabIndex="0" role="region" aria-label="Loan product comparison">
+              <div className="loan-comparison__card">
+                <table>
+                  <thead><tr><th scope="col"><span className="sr-only">Loan feature</span></th><th scope="col">Fix &amp; Flip</th><th scope="col">Refinance</th><th scope="col">New Construction</th><th scope="col">DSCR</th></tr></thead>
+                  <tbody>{loanComparisonRows.map(([label, ...values], rowIndex) => <tr key={label}><th scope="row">{label}</th>{values.map((value, columnIndex) => <td className={rowIndex === 1 ? 'loan-comparison__rate' : undefined} key={`${label}-${columnIndex}`}>{value}</td>)}</tr>)}</tbody>
+                </table>
+                <p className="loan-comparison__note">* Non-Dutch Interest on Ground-Up Construction and Rehabs over $100K</p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <section className="section section--soft"><div className="container split-feature">
         <ScrollReveal className="split-feature__visual"><img src={images.about} alt="Business professionals discussing a real estate financing opportunity" /><div className="image-note"><strong>Opportunity first.</strong><span>Financing structured around the deal.</span></div></ScrollReveal>

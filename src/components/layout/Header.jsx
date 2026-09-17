@@ -7,7 +7,7 @@ import { allPrograms } from '../../data/loanPrograms';
 function Brand() {
   return (
     <Link className="brand" to="/" aria-label="Business Financial One home">
-      {business.logoUrl ? <img src={business.logoUrl} alt="Business Financial One" /> : <><span className="brand__mark">BFO</span><span className="brand__name">Business Financial <b>One</b></span></>}
+      <img src={business.logoUrl} alt="Business Financial One" />
     </Link>
   );
 }
@@ -39,6 +39,8 @@ export default function Header() {
             <a href={business.emailHref}><Mail size={14} />{business.email}</a>
           </div>
           <div className="socials" aria-label="Social media">
+            <a href={business.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+            <a href={business.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">▶</a>
             <a href={business.social.x} target="_blank" rel="noreferrer" aria-label="X / Twitter">X</a>
             <a href={business.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">◎</a>
             <a href={business.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>

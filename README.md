@@ -43,11 +43,7 @@ src/
 
 ## Logo and images
 
-The supplied brief did not include the original logo file. The header therefore displays a clean text fallback. To use the official logo, add it at:
-
-`public/assets/bfo-logo.png`
-
-Then set `logoUrl` to `'/assets/bfo-logo.png'` in `src/data/business.js`. Do not alter the logo artwork.
+The official logo is stored at `public/assets/bfo-logo.jpeg` and is used in the header, footer, and browser icon. Do not alter the logo artwork.
 
 Remote image URLs are centralized in `src/data/loanPrograms.js`. To self-host them, add image files under `public/assets/images/` and replace those URLs with paths such as `/assets/images/hero-real-estate.jpg`.
 
