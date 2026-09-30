@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-export default function PageHero({ eyebrow, title, text, image, cta = true, ctaUrl }) {
+export default function PageHero({ eyebrow, title, text, image, cta = true, ctaUrl, ctaTo = '/apply' }) {
   return (
     <section className="page-hero" style={{ '--hero-image': `url(${image})` }}>
       <div className="container page-hero__content">
@@ -10,7 +10,7 @@ export default function PageHero({ eyebrow, title, text, image, cta = true, ctaU
         <p>{text}</p>
         {cta && (ctaUrl
           ? <a href={ctaUrl} className="button button--red" target="_blank" rel="noreferrer">Request Financing <ArrowRight size={17} /></a>
-          : <Link to="/apply" className="button button--red">Request Financing <ArrowRight size={17} /></Link>)}
+          : <Link to={ctaTo} className="button button--red">Request Financing <ArrowRight size={17} /></Link>)}
       </div>
     </section>
   );

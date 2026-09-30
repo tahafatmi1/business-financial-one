@@ -12,7 +12,7 @@ const states = [
   'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
 ];
 
-export default function CreateBorrower() {
+export default function CreateBorrower({ programName, cancelTo }) {
   const [borrowerType, setBorrowerType] = useState('entity');
   const [submitted, setSubmitted] = useState(false);
 
@@ -22,10 +22,11 @@ export default function CreateBorrower() {
   };
 
   return <>
-    <Seo title="Create Borrower | Fix & Flip" description="Create a borrower profile for Fix & Flip financing with Business Financial One." />
+    <Seo title={`Create Borrower | ${programName}`} description={`Create a borrower profile for ${programName} financing with Business Financial One.`} />
     <section className="borrower-page">
       <form className="borrower-form" onSubmit={submit}>
         <h1>Create Borrower</h1>
+        <p className="borrower-form__program">{programName}</p>
         <div className={`borrower-form__notice${submitted ? ' borrower-form__notice--success' : ''}`} role="status"><span aria-hidden="true">ⓘ</span>{submitted ? 'Borrower details are ready for review.' : 'Please add the borrower’s details below'}</div>
 
         <fieldset className="borrower-form__type">
@@ -53,7 +54,7 @@ export default function CreateBorrower() {
           </div>
         </div>
 
-        <div className="borrower-form__actions"><Link to="/loan-programs/fix-flip">Cancel</Link><button type="submit">Create Borrower</button></div>
+        <div className="borrower-form__actions"><Link to={cancelTo}>Cancel</Link><button type="submit">Create Borrower</button></div>
       </form>
     </section>
   </>;

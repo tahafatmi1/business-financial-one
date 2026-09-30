@@ -65,7 +65,7 @@ Suggested filenames:
 
 ## Application and contact forms
 
-The application page hands applicants off to the client-provided hosted application portal. Its URL is stored as `applicationUrl` in `src/data/business.js` so it can be updated in one place.
+The application page routes Business Funding and Commercial applicants to the built-in borrower form. Fix & Flip, Construction, Rental/DSCR, Multifamily, and Bridge/Cash-Out applicants continue to the client-provided My1003App portal. The hosted URL and internal borrower-form routes are centralized in `src/data/business.js`.
 
 The contact form remains a frontend demonstration and does not transmit data. Its future integration point is `src/pages/Contact.jsx`, inside the `submit` function.
 

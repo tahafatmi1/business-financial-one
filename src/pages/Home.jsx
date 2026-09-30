@@ -8,7 +8,7 @@ import LoanCard from '../components/loan-programs/LoanCard';
 import FAQAccordion from '../components/common/FAQAccordion';
 import CTASection from '../components/common/CTASection';
 import { allPrograms, images } from '../data/loanPrograms';
-import { underwritingDisclaimer } from '../data/business';
+import { borrowerFormRoutes, underwritingDisclaimer } from '../data/business';
 import { faqItems } from './FAQ';
 
 const trustItems = [
@@ -64,7 +64,7 @@ export default function Home() {
 
       <section className="section" id="programs"><div className="container">
         <ScrollReveal><SectionHeading eyebrow="Financing Solutions" title="Financing Built Around Your Investment Strategy" text="Explore focused capital solutions for acquisitions, construction, rentals, commercial assets and business growth." align="center" /></ScrollReveal>
-        <div className="loan-grid">{allPrograms.map((program, index) => <ScrollReveal key={program.slug} delay={(index % 3) * 70}><LoanCard program={program} pathOverride={program.slug === 'fix-flip' ? '/loan-programs/fix-flip/borrower' : undefined} linkLabel={program.slug === 'fix-flip' ? 'Create Borrower' : 'Explore program'} /></ScrollReveal>)}</div>
+        <div className="loan-grid">{allPrograms.map((program, index) => <ScrollReveal key={program.slug} delay={(index % 3) * 70}><LoanCard program={program} /></ScrollReveal>)}</div>
       </div></section>
 
       <section className="section loan-comparison" aria-labelledby="loan-comparison-title">
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="property-grid">{[[HomeIcon, 'Residential Investment'], [KeyIcon, '1–4 Unit Rentals'], [Building, 'Multifamily'], [StoreIcon, 'Commercial'], [Layers3, 'Mixed-Use'], [Warehouse, 'Light Industrial'], [Map, 'Land / Development']].map(([Icon, label]) => <div className="property-item" key={label}><Icon /><span>{label}</span><ArrowRight /></div>)}</div>
       </div></section>
 
-      <section className="business-banner"><div className="container"><div><span className="eyebrow eyebrow--light">Beyond Real Estate</span><h2>Need Capital for Your Business?</h2><p>Explore funding for working capital, expansion, equipment, inventory, payroll, marketing and the next stage of business growth.</p></div><div className="button-row"><Link className="button button--white" to="/business-funding">Explore Business Funding</Link><Link className="button button--outline-light" to="/apply">Request Funding <ArrowRight size={17} /></Link></div></div></section>
+      <section className="business-banner"><div className="container"><div><span className="eyebrow eyebrow--light">Beyond Real Estate</span><h2>Need Capital for Your Business?</h2><p>Explore funding for working capital, expansion, equipment, inventory, payroll, marketing and the next stage of business growth.</p></div><div className="button-row"><Link className="button button--white" to="/business-funding">Explore Business Funding</Link><Link className="button button--outline-light" to={borrowerFormRoutes.businessFunding}>Request Funding <ArrowRight size={17} /></Link></div></div></section>
 
       <section className="section"><div className="container"><ScrollReveal><SectionHeading eyebrow="The BFO Difference" title="Why Investors Choose BFO" align="center" /></ScrollReveal><div className="why-grid">{[[Gauge, 'Speed', 'A responsive process built for real-world deal timelines.'], [SlidersHorizontal, 'Flexibility', 'Multiple structures for a range of transaction profiles.'], [UserRound, 'Personal Service', 'Clear communication with a financing specialist.'], [Handshake, 'Multiple Options', 'Real estate and business financing under one roof.']].map(([Icon, title, text]) => <div key={title}><Icon /><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>
 
