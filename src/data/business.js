@@ -6,6 +6,10 @@ export const business = {
   phoneHref: 'tel:+19548400497',
   email: 'ed@busfinancialone.com',
   emailHref: 'mailto:ed@busfinancialone.com',
+  forms: {
+    endpoint: 'https://api.web3forms.com/submit',
+    web3FormsAccessKey: '110ef4ac-4dae-498f-8df0-ea73944b3629'
+  },
   applicationUrl: 'https://99966274.my1003app.com/2522574/register',
   guidelinesUrl: 'https://21505619.fs1.hubspotusercontent-na1.net/hubfs/21505619/Website%20-%20Guidelines%20%282025%29/Equity%20First.pdf',
   address: ['7401 Wiles Road', 'Coral Springs, FL 33067'],

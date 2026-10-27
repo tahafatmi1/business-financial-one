@@ -67,9 +67,9 @@ Suggested filenames:
 
 The application page routes Business Funding and Commercial applicants to the built-in borrower form. Fix & Flip, Construction, Rental/DSCR, Multifamily, and Bridge/Cash-Out applicants continue to the client-provided My1003App portal. The hosted URL and internal borrower-form routes are centralized in `src/data/business.js`.
 
-The contact form remains a frontend demonstration and does not transmit data. Its future integration point is `src/pages/Contact.jsx`, inside the `submit` function.
+The contact form and the built-in Business Funding and Commercial borrower forms submit through Web3Forms and notify `ed@busfinancialone.com`. The public Web3Forms endpoint and access key are centralized in `src/data/business.js`; submission handling is shared in `src/utils/submitWeb3Form.js`.
 
-Use a secure HTTPS endpoint, server-side validation, appropriate privacy disclosures and access controls before accepting real customer information. Do not collect Social Security numbers through the current form.
+The borrower form intentionally does not collect Social Security numbers, tax IDs, banking credentials or account numbers. Applicants should use the client-provided My1003App portal or another approved secure channel when sensitive documentation is required.
 
 ## Legal review
 
